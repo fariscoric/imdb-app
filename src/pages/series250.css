@@ -1,0 +1,17 @@
+.listItem {
+    display: flex;
+    border-top: 2px solid darkred;
+    flex-direction: row;
+    padding: 10px;
+    margin: 5px;
+    justify-content: space-between;
+    font-weight: 600;
+    color: darkred;
+    align-items: center;
+    }
+
+.seriesContainer {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
