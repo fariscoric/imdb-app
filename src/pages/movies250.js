@@ -22,6 +22,7 @@ export default function MoviePage() {
 
     return (
         <div className='movieContainer'>
+            {console.log(movies)}
             <ul style={{
                 listStyleType: 'none'
             }}>
