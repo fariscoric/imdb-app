@@ -22,3 +22,10 @@
     font-weight: 700;
     font-size: 30px;
 }
+
+.mediaCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
