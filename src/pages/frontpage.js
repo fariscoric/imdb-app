@@ -30,20 +30,20 @@ export default function FrontPage() {
                 <NavLink to='movies' className='navItem'>Movies</NavLink>
                 <NavLink to='series' className='navItem'>TV Shows</NavLink>
             </div>
-
-            <input type='search' placeholder='search' onChange={(e) => {
+            <div className='searchResults'>
+            <input type='search' className='searchBar' placeholder='Search' onChange={(e) => {
                 setTerm(e.target.value)
             }}/>
-            <div className='mediaCards'>
+            <div className='mediaCard'>
             {api?.map((el) => (
-                 <Card
+                 <Card 
                  sx={{
                    minWidth: 345,
                    maxWidth: 345,
                    mt: 3,
                    maxHeight: "320px",
-                   backgroundColor: "#cccccc",
-                   color: "#cb2d6f",
+                   backgroundColor: "#eb4034",
+                   color: "#ffffff",
                  }}
                >
                  <CardActionArea>
@@ -63,9 +63,10 @@ export default function FrontPage() {
                    </CardContent>
                  </CardActionArea>
                </Card>
+               
             )).slice(0,3)}
             </div>
-            
+            </div>
 
 
         </div>
