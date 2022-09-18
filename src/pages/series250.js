@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './series250.css'
+import Series from './series.json'
+import { useNavigate } from 'react-router-dom'
 
 export default function SeriesPage() {
     const [series, setSeries] = useState([])
-    
-    const API_KEY = 'k_sbw3q56e'
+    const navigate = useNavigate();
 
     function getSeries() {
-        axios.get(
-        `https://imdb-api.com/en/API/Top250TVs/k_sbw3q56e`
-    )
-    .then((res) => {
-        setSeries(res.data.items);
-    });
+        setSeries(Series.results)
     }
 
     useEffect(() => {
@@ -28,9 +24,18 @@ export default function SeriesPage() {
                 {series.map((res) => (
                         <li>
                             <div className='listItem'>
-                            <div className='listItemNumber'>{res.rank}</div>
-                            <div className='listItemName'>{res.title}</div>
-                            <div className='listItemRating'>{res.imDbRating}</div>
+                                <div onClick={() =>
+                                    navigate(`${res.id}`, {
+                                        state: {
+                                            id: res.id,
+                                            image: res.image,
+                                            title: res.title,
+                                            description: res.description,
+                                            },
+                                        })
+                                    }
+                                    >{res.title}
+                                    </div>
                             </div>
                         </li>
                 ))}

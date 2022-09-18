@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FrontPage from './pages/frontpage'
 import MoviesPage from './pages/movies250'
 import SeriesPage from './pages/series250'
+import InfoPage from './pages/infoPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,8 @@ root.render(
       <Route path='/' element={<App/>}></Route>
       <Route path='movies' element={<MoviesPage/>}></Route>
       <Route path='series' element={<SeriesPage/>}></Route>
+      <Route path='movies/:id' element={<InfoPage/>}></Route>
+      <Route path='series/:id' element={<InfoPage/>}></Route>
     </Routes>
   </BrowserRouter>
 );

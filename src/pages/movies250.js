@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './movies250.css'
+import Movies from './movies.json'
+import { useNavigate} from 'react-router-dom'
 
 export default function MoviePage() {
     const [movies, setMovies] = useState([])
+    const navigate = useNavigate();
     
-    const API_KEY = 'k_sbw3q56e'
 
     function getMovies() {
-        axios.get(
-        `https://imdb-api.com/en/API/Top250Movies/k_sbw3q56e`
-    )
-    .then((res) => {
-        setMovies(res.data.items);
-    });
+        setMovies(Movies.results)
     }
 
     useEffect(() => {
@@ -29,9 +26,18 @@ export default function MoviePage() {
                 {movies.map((res) => (
                         <li>
                             <div className='listItem'>
-                                <div>{res.rank}</div>
-                                <div>{res.title}</div>
-                                <div>{res.imDbRating}</div>
+                                <div onClick={() =>
+                                    navigate(`${res.id}`, {
+                                        state: {
+                                            id: res.id,
+                                            image: res.image,
+                                            title: res.title,
+                                            description: res.description,
+                                            },
+                                        })
+                                    }
+                                    >{res.title}
+                                    </div>
                             </div>
                         </li>
                 ))}
