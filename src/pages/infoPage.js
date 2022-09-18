@@ -3,6 +3,8 @@ import Movies from './movies.json'
 import { useParams, useLocation } from 'react-router-dom'
 import './infoPage.css'
 import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
+import NavBar from '../components/navbar/navbar'
+import { Routes, Route, Link, NavLink } from 'react-router-dom'
 
 
 
@@ -17,6 +19,13 @@ export default function InfoPage() {
     
     return (
         <div className='Container'>
+          <div className='navBar'>
+              <NavLink to='/' className='navItem'>IMDB</NavLink>
+              <div className='navItemsCont'>
+                <NavLink to='movies' className='navItem'>Movies</NavLink>
+                <NavLink to='series' className='navItem'>TV Shows</NavLink>
+          </div>
+          </div>
             <Card 
                  sx={{
                    minWidth: 345,

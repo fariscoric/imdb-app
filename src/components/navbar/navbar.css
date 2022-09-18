@@ -1,12 +1,3 @@
-.Container {
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
 .navBar {
     width: 100%;
     height: 10vh;
@@ -16,7 +7,9 @@
     display: flex;
     color: white;
     text-decoration: none;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .navBar h1 {

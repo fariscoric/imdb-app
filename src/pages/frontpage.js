@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './frontpage.css'
-import { Routes, Route, Link, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
 
@@ -26,10 +25,6 @@ export default function FrontPage() {
 
     return (
         <div className='container'>
-            <div className='navBar'>
-                <NavLink to='movies' className='navItem'>Movies</NavLink>
-                <NavLink to='series' className='navItem'>TV Shows</NavLink>
-            </div>
             <div className='searchResults'>
             <input type='search' className='searchBar' placeholder='Search' onChange={(e) => {
                 setTerm(e.target.value)
@@ -65,10 +60,8 @@ export default function FrontPage() {
                </Card>
                
             )).slice(0,3)}
+              </div>
             </div>
-            </div>
-
-
         </div>
     )
 }

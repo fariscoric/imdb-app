@@ -3,6 +3,7 @@ import axios from 'axios'
 import './movies250.css'
 import Movies from './movies.json'
 import { useNavigate} from 'react-router-dom'
+import NavBar from '../components/navbar/navbar'
 
 export default function MoviePage() {
     const [movies, setMovies] = useState([])
@@ -19,7 +20,7 @@ export default function MoviePage() {
 
     return (
         <div className='movieContainer'>
-            {console.log(movies)}
+            <NavBar/>
             <ul style={{
                 listStyleType: 'none'
             }}>

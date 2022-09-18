@@ -3,6 +3,7 @@ import axios from 'axios'
 import './series250.css'
 import Series from './series.json'
 import { useNavigate } from 'react-router-dom'
+import NavBar from '../components/navbar/navbar'
 
 export default function SeriesPage() {
     const [series, setSeries] = useState([])
@@ -18,6 +19,7 @@ export default function SeriesPage() {
 
     return (
         <div className='seriesContainer'>
+            <NavBar/>
             <ul style={{
                 listStyleType: 'none'
             }}>
