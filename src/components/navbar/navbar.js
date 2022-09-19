@@ -7,8 +7,8 @@ export default function NavBar() {
         <div className='navBar'>
               <NavLink to='/' className='navItem'>IMDB</NavLink>
               <div className='navItemsCont'>
-                <NavLink to='movies' className='navItem'>Movies</NavLink>
-                <NavLink to='series' className='navItem'>TV Shows</NavLink>
+                <NavLink to='/movies' className='navItem'>Movies</NavLink>
+                <NavLink to='/series' className='navItem'>TV Shows</NavLink>
               </div>
         </div>
     )
